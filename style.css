@@ -1,0 +1,7 @@
+.custom-btn-border{
+    border: 4px solid #7fb2fd;
+}
+#formToggleBtn:hover {
+    background-color: #0d6efd;
+    border-color: #7fb2fd;
+}

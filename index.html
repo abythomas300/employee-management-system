@@ -31,31 +31,56 @@
               <form id="employeeForm">
                 <div class="row g-3">
                   <div class="col-md-4">
-                    <label for="name" class=" form-label">Full Name</label>
-                    <input type="text" id="name" class="form-control" placeholder="Name" required />
-                  </div>
-                  <div class="col-md-4">
-                    <label for="email" class=" form-label">Email ID</label>
-                    <input type="email" id="email" class="form-control" placeholder="Email" required />
-                  </div>
-                  <div class="col-md-4">
-                    <label for="phoneno" class=" form-label">Phone Number</label>
-                    <input type="tel" id="phoneno" class="form-control" placeholder="Phone Number" required />
-                  </div>
-                  <div class="col-md-4">
-                    <!-- <input type="text" id="gender" class="form-control" placeholder="Gender" required /> -->
-                     <label for="phoneno" class=" form-label">Gender</label>
+                    <label for="phoneno" class=" form-label">Salutation</label>
                      <select class="form-select">
-                        <option value="">Select Gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                        <option value="Mr.">Mr.</option>
+                        <option value="Mrs.">Mrs.</option>
                      </select>
                   </div>
                   <div class="col-md-4">
-                    <!-- <input type="text" id="country" class="form-control" placeholder="Country" required /> -->
+                    <label for="fname" class=" form-label">First Name</label>
+                    <input type="text" id="fname" class="form-control" required />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="lastname" class=" form-label">Last Name</label>
+                    <input type="text" id="lastname" class="form-control" required />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="email" class=" form-label">Email ID</label>
+                    <input type="email" id="email" class="form-control" placeholder="enter an active mail id" required />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="phoneno" class=" form-label">Phone Number</label>
+                    <input type="tel" id="phoneno" class="form-control" required />
+                  </div>
+                  <div class="col-md-4">
+                     <label for="phoneno" class=" form-label">Gender</label>
+                     <select class="form-select" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                     </select>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="qualification" class=" form-label">Qualification</label>
+                     <select class="form-select" required>
+                        <option value="">choose one</option>
+                        <option value="Bachelor's Degree">Bachelor's Degree</option>
+                        <option value="Master's Degree">Master's Degree</option>
+                        <option value="Self taught">Self taught</option>
+                     </select>
+                  </div>
+                  <div class="col-md-4">
                      <label for="country" class=" form-label">Country</label>
                      <select class="form-select" id="country" required>
-                        <option value="">Country</option>
+                        <option value="">Select</option>
                         <option value="India">India</option>
                         <option value="United States">United States</option>
                         <option value="Japan">Japan</option>
@@ -67,6 +92,22 @@
                   <div class="col-md-4">
                     <label for="dob" class="form-label">Date of Birth</label>
                     <input type="date" id="dob" class="form-control" placeholder="Date of Birth" required />
+                  </div>
+                  <div class="col-md-4">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control" id="address" rows="3" placeholder="Enter your current address" required></textarea>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" id="city" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="state" class="form-label">State</label>
+                    <input type="text" class="form-control" id="state" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" class="form-control" id="country" required>
                   </div>
                   <div class="d-grid">
                     <button type="submit" class="btn btn-primary">Add Employee</button>

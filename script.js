@@ -18,30 +18,34 @@ function toggleForm(){
 }
 
 
-
-let tableBody = document.querySelector("#employeeTableBody")
-let rows = "";
+// - - - - - READ OPERATION - - - - - //
 
 // fetch data from API
-fetch("http://localhost:3000/employees")       // fetching API
-    .then((response)=>{                        // handling http response
-        return response.json()                 // converting unreadable response body to .json format
-    })
-    .then((data)=>{                            // receiving the actual data from the promise return by json() method
-        for(let i = 0; i < data.length; i++) {
-            rows = rows + `
-        <tr>
-            <td>${i+1}</td>
-            <td>${data[i].firstName}</td>
-            <td>${data[i].email}</td>
-            <td>${data[i].phone}</td>
-            <td>${data[i].gender}</td>
-            <td>${data[i].dob}</td>
-            <td>${data[i].country}</td>
-            
-        <tr>
-        `
-        }
-        tableBody.innerHTML = rows;              // assigning all the rows value to table body 
-    })
+async function getEmployeeData() {
+    let response = await fetch("http://localhost:3000/employees")            
+    const dataArray = await response.json()
+    renderTable(dataArray)
+}
 
+function renderTable(data) {                                        // receives 'dataArray' value
+    let tableBody = document.querySelector("#employeeTableBody")
+    let rows = "";
+
+    for(let i = 0; i < data.length; i++) {
+        rows = rows + `
+    <tr>
+        <td>${i+1}</td>
+        <td>${data[i].firstName}</td>
+        <td>${data[i].email}</td>
+        <td>${data[i].phone}</td>
+        <td>${data[i].gender}</td>
+        <td>${data[i].dob}</td>
+        <td>${data[i].country}</td>
+        
+    <tr>
+    `
+    }
+    tableBody.innerHTML = rows;                                     // assign the 'rows' html code into tableBody
+}
+
+getEmployeeData();                                                  // invoke method to fetch data from API

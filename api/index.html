@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Fetch</title>
+</head>
+<body>
+  <h1>Employees</h1>
+  <ul id="list"></ul>
+
+  <script>
+    fetch("http://localhost:3000/employees")
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById("list");
+        data.forEach(emp => {
+          const li = document.createElement("li");
+          li.textContent = `${emp.firstName} ${emp.lastName}`;
+          list.appendChild(li);
+        });
+      })
+      .catch(err => console.error("Error fetching employees:", err));
+  </script>
+</body>
+</html>

@@ -41,7 +41,7 @@ function renderTable(data) {                                        // receives 
         <td>${data[i].gender}</td>
         <td>${data[i].dob}</td>
         <td>${data[i].country}</td>
-        <td><button type="button" class="btn btn-outline-success">Update</button> <button type="button" class="btn btn-outline-danger">Delete</button></td>
+        <td><button type="button" class="btn btn-sm btn-outline-success">Update</button> <button type="button" class="btn btn-sm btn-outline-danger">Delete</button></td>
     <tr>
     `
     }

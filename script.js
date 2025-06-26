@@ -35,7 +35,7 @@ function renderTable(data) {                                        // receives 
         rows = rows + `
     <tr>
         <td>${i+1}</td>
-        <td>${data[i].firstName}</td>
+        <td>${data[i].salutation}. ${data[i].firstName}</td>
         <td>${data[i].email}</td>
         <td>${data[i].phone}</td>
         <td>${data[i].gender}</td>

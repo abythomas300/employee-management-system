@@ -66,5 +66,39 @@
     "username": "azimsai",
     "password": "asdf1234",
     "id": "11e73581-a83c-48de-bc84-090334d7acce"
+  },
+  {
+    "id": "a285a5a5-e5e9-4a8f-ae38-db90e040cff9",
+    "salutation": "Mr",
+    "firstName": "Tony",
+    "lastName": "Stark",
+    "username": "tonystark300",
+    "password": "supersecretpassword",
+    "email": "tony300@gmail.com",
+    "phone": "9856341271",
+    "gender": "Male",
+    "qualifications": "Self taught",
+    "dob": "13-06-1990",
+    "country": "United States",
+    "address": "Malibu Club",
+    "city": "Belmar City",
+    "state": "California"
+  },
+  {
+    "id": "f999452a-4824-460c-90dd-eab8993542df",
+    "salutation": "Mr",
+    "firstName": "Brian",
+    "lastName": "Tracy",
+    "username": "briantracy45",
+    "password": "eatthatfrog",
+    "email": "briantracymotivates@gmail.com",
+    "phone": "9852147634",
+    "gender": "Male",
+    "qualifications": "Master's Degree",
+    "dob": "05-01-1944",
+    "country": "United States",
+    "address": "Aptno.406, San Diego",
+    "city": "Winners City",
+    "state": "California"
   }
 ]

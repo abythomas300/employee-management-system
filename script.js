@@ -18,7 +18,16 @@ function toggleForm(){
 }
 
 
-// - - - - - READ OPERATION - - - - - //
+
+// for disabling page reload during  button click
+let employeeForm = document.querySelector("#employeeForm"); // getting form
+employeeForm.addEventListener("submit", (e)=>{
+    e.preventDefault()
+})
+
+
+
+// - - - - - READ OPERATION - - - - - 
 
 // fetch data from API
 async function getEmployeeData() {

@@ -31,15 +31,15 @@
               <form id="employeeForm">
                 <div class="row g-3">
                   <div class="col-md-4">
-                    <label for="phoneno" class=" form-label">Salutation</label>
-                     <select class="form-select">
+                    <label for="salutation" class=" form-label">Salutation</label>
+                     <select class="form-select" id="salutation">
                         <option value="Mr.">Mr.</option>
                         <option value="Mrs.">Mrs.</option>
                      </select>
                   </div>
                   <div class="col-md-4">
-                    <label for="fname" class=" form-label">First Name</label>
-                    <input type="text" id="fname" class="form-control" required />
+                    <label for="firstname" class="form-label">First Name</label>
+                    <input type="text" id="firstname" class="form-control" required />
                   </div>
                   <div class="col-md-4">
                     <label for="lastname" class=" form-label">Last Name</label>
@@ -62,33 +62,22 @@
                     <input type="tel" id="phoneno" class="form-control" required />
                   </div>
                   <div class="col-md-4">
-                     <label for="phoneno" class=" form-label">Gender</label>
-                     <select class="form-select" required>
+                     <label for="gender" class=" form-label">Gender</label>
+                     <select class="form-select" id="gender" required>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                      </select>
                   </div>
                   <div class="col-md-4">
                     <label for="qualification" class=" form-label">Qualification</label>
-                     <select class="form-select" required>
+                     <select class="form-select" id="qualification" required>
                         <option value="">choose one</option>
                         <option value="Bachelor's Degree">Bachelor's Degree</option>
                         <option value="Master's Degree">Master's Degree</option>
                         <option value="Self taught">Self taught</option>
                      </select>
                   </div>
-                  <div class="col-md-4">
-                     <label for="country" class=" form-label">Country</label>
-                     <select class="form-select" id="country" required>
-                        <option value="">Select</option>
-                        <option value="India">India</option>
-                        <option value="United States">United States</option>
-                        <option value="Japan">Japan</option>
-                        <option value="United Arab Emirates">United Arab Emirates</option>
-                        <option value="Russia">Russia</option>
-                        <option value="China">China</option>
-                     </select>
-                  </div>
+                  
                   <div class="col-md-4">
                     <label for="dob" class="form-label">Date of Birth</label>
                     <input type="date" id="dob" class="form-control" placeholder="Date of Birth" required />
@@ -106,9 +95,17 @@
                     <input type="text" class="form-control" id="state" required>
                   </div>
                   <div class="col-md-4">
-                    <label for="country" class="form-label">Country</label>
-                    <input type="text" class="form-control" id="country" required>
-                  </div>
+                    <label for="country" class=" form-label">Country</label>
+                    <select class="form-select" id="country" required>
+                       <option value="">Select</option>
+                       <option value="India">India</option>
+                       <option value="United States">United States</option>
+                       <option value="Japan">Japan</option>
+                       <option value="United Arab Emirates">United Arab Emirates</option>
+                       <option value="Russia">Russia</option>
+                       <option value="China">China</option>
+                    </select>
+                 </div>
                   <div class="d-grid">
                     <button type="submit" class="btn btn-primary">Add Employee</button>
                   </div>

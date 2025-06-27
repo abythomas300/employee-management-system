@@ -30,23 +30,23 @@ employeeForm.addEventListener("submit", (e)=>{
 // for fetching all details input by user
 function fetchInputDetails() {
 
-    const salutation = document.querySelector("#salutation").value;
-    const firstName = document.querySelector("#firstname").value;
-    const lastName = document.querySelector("#lastname").value;
-    const username = document.querySelector("#username").value;
-    const password = document.querySelector("#password").value;
-    const email = document.querySelector("#email").value;
-    const phoneno = document.querySelector("#phoneno").value;
-    const gender = document.querySelector("#gender").value;
-    const qualification = document.querySelector("#qualification").value;
-    const country = document.querySelector("#country").value;
-    const dob = document.querySelector("#dob").value;
-    const address = document.querySelector("#address").value;
-    const city = document.querySelector("#city").value;
-    const state = document.querySelector("#state").value;
+    const salutation = document.querySelector("#salutation").value.trim();
+    const firstName = document.querySelector("#firstname").value.trim();
+    const lastName = document.querySelector("#lastname").value.trim();
+    const username = document.querySelector("#username").value.trim();
+    const password = document.querySelector("#password").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const phoneno = document.querySelector("#phoneno").value.trim();
+    const gender = document.querySelector("#gender").value.trim();
+    const qualification = document.querySelector("#qualification").value.trim();
+    const country = document.querySelector("#country").value.trim();
+    const dob = document.querySelector("#dob").value.trim();
+    const address = document.querySelector("#address").value.trim();
+    const city = document.querySelector("#city").value.trim();
+    const state = document.querySelector("#state").value.trim();
 
     // logging out to console for testing purpose
-    console.log("User Input data");  
+    console.log("User Input data:");  
     console.log(salutation);
     console.log(firstName);
     console.log(lastName);

@@ -27,6 +27,45 @@ employeeForm.addEventListener("submit", (e)=>{
 
 
 
+// for fetching all details input by user
+function fetchInputDetails() {
+
+    const salutation = document.querySelector("#salutation").value;
+    const firstName = document.querySelector("#firstname").value;
+    const lastName = document.querySelector("#lastname").value;
+    const username = document.querySelector("#username").value;
+    const password = document.querySelector("#password").value;
+    const email = document.querySelector("#email").value;
+    const phoneno = document.querySelector("#phoneno").value;
+    const gender = document.querySelector("#gender").value;
+    const qualification = document.querySelector("#qualification").value;
+    const country = document.querySelector("#country").value;
+    const dob = document.querySelector("#dob").value;
+    const address = document.querySelector("#address").value;
+    const city = document.querySelector("#city").value;
+    const state = document.querySelector("#state").value;
+
+    // logging out to console for testing purpose
+    console.log("User Input data");  
+    console.log(salutation);
+    console.log(firstName);
+    console.log(lastName);
+    console.log(username);
+    console.log(password);
+    console.log(email);
+    console.log(phoneno);
+    console.log(gender);
+    console.log(qualification);
+    console.log(country);
+    console.log(dob);
+    console.log(address);
+    console.log(city);
+    console.log(state);
+
+}
+
+
+
 // - - - - - READ OPERATION - - - - - 
 
 // fetch data from API

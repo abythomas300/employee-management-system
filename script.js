@@ -191,7 +191,32 @@ function renderTable(data) {                                        // receives 
     }
     tableBody.innerHTML = rows;                                     // assign the 'rows' html code into tableBody 
     
+
+    // Event listener for UPDATE button
+    let updateButtons = document.querySelectorAll(".updt-button");
+    updateButtons.forEach((updateButton)=>{
+        updateButton.addEventListener("click", ()=>{
+            // button click logic goes here
+        })
+    }) 
+
+    // Event listener for UPDATE button
+    let deleteButtons = document.querySelectorAll(".dlt-button"); 
+    deleteButtons.forEach((deleteButton)=>{
+        deleteButton.addEventListener("click", ()=>{
+            // button click logic goes here
+        })
+    })
+    
 }
+
+function deleteEmployee(id) {  // 'id' receives 'uuid' from renderTable() 
+    console.log("DELETE EMPLOYEE METHOD INVOKED!!") // for debugging
+    console.log("Button click detected")
+    console.log("Activity found on : ",  id)  // THIS LOGS OUT 'undefined'
+}
+
+
 
 
 

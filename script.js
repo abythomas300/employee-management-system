@@ -4,14 +4,13 @@ let formToggleButton = document.querySelector("#formToggleBtn");
 let isFormVisible = false;
 function toggleForm(){
     if(!isFormVisible) {
-        formContainer.classList.remove("d-none");
-        formContainer.classList.add("d-block");
+        // formContainer.classList.remove("d-none");
+        // formContainer.classList.add("d-block");
         formToggleButton.classList.add("custom-btn-border");
         isFormVisible = true;
     } else {
-        formContainer.classList.add("d-none");
-        formContainer.classList.add("d-block");
-        formToggleButton.classList.remove("active");
+        // formContainer.classList.add("d-none");
+        // formToggleButton.classList.remove("active");
         formToggleButton.classList.remove("custom-btn-border");
         isFormVisible = false;
     }
@@ -224,6 +223,50 @@ function renderTable(data) {                                        // receives 
         })
     })
     
+}
+
+
+
+// for prefilling form with updating employee's initial data
+function prefillForm(specificEmployeeDetails) { // this parameter receives 'specificEmployeeDetails' send my getEmployee() 
+    
+    // making form visible
+    console.log("Making form visible")
+    formContainer.classList.remove("d-none");
+    //prefilling old data to all respective fields
+    
+    const eSalutation = document.querySelector("#salutation")
+    const eFirstName = document.querySelector("#firstname")
+    const eLastName = document.querySelector("#lastname")
+    const eUsername = document.querySelector("#username")
+    const ePassword = document.querySelector("#password")
+    const eEmail = document.querySelector("#email")
+    const ePhone = document.querySelector("#phoneno")
+    const eGender = document.querySelector("#gender")
+    const eQualifications = document.querySelector("#qualification")
+    const eCountry = document.querySelector("#country")
+    const eDOB = document.querySelector("#dob")
+    const eAddress = document.querySelector("#address")
+    const eCity = document.querySelector("#city")
+    const eState = document.querySelector("#state")
+
+
+    console.log(typeof specificEmployeeDetails.firstName)
+    eSalutation.value = specificEmployeeDetails.salutation;
+    eFirstName.value = specificEmployeeDetails.firstName;
+    eLastName.value = specificEmployeeDetails.lastName
+    eUsername.value = specificEmployeeDetails.username
+    ePassword.value = specificEmployeeDetails.password
+    eEmail.value = specificEmployeeDetails.email
+    ePhone.value = specificEmployeeDetails.phone
+    eGender.value = specificEmployeeDetails.gender
+    eQualifications.value = specificEmployeeDetails.qualifications
+    eCountry.value = specificEmployeeDetails.country
+    eDOB.value = specificEmployeeDetails.dob
+    eAddress.value = specificEmployeeDetails.address
+    eCity.value = specificEmployeeDetails.city
+    eState.value = specificEmployeeDetails.state
+
 }
 
 

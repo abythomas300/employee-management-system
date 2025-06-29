@@ -191,7 +191,6 @@ function renderTable(data) {                                        // receives 
     }
     tableBody.innerHTML = rows;                                     // assign the 'rows' html code into tableBody 
     
-
     // Event listener for UPDATE button
     let updateButtons = document.querySelectorAll(".updt-button");
     updateButtons.forEach((updateButton)=>{
@@ -200,23 +199,40 @@ function renderTable(data) {                                        // receives 
         })
     }) 
 
-    // Event listener for UPDATE button
+    // Event listener for DELETE button
     let deleteButtons = document.querySelectorAll(".dlt-button"); 
     deleteButtons.forEach((deleteButton)=>{
         deleteButton.addEventListener("click", ()=>{
-            // button click logic goes here
+            if(confirm("Are you sure you want to delete")) {  // confirmation box
+                deleteEmployee(deleteButton.dataset.uuid)  // deleteEmployee() method INVOKE
+            }
         })
     })
     
 }
 
-function deleteEmployee(id) {  // 'id' receives 'uuid' from renderTable() 
-    console.log("DELETE EMPLOYEE METHOD INVOKED!!") // for debugging
-    console.log("Button click detected")
-    console.log("Activity found on : ",  id)  // THIS LOGS OUT 'undefined'
+
+
+// - - - - - DELETE OPERATION (removing an employee from the list) - - - - -
+
+async function deleteEmployee(id) {  // 'id' receives 'uuid' from renderTable() 
+    try {
+        console.log("DELETE EMPLOYEE METHOD INVOKED!!") // for debugging
+        console.log("Button click detected")
+        console.log("Activity found on : ",  id)  // THIS LOGS OUT 'undefined'
+
+        const res = fetch(`http://localhost:3000/employees/${id}`, {
+            method: "DELETE"
+        });
+
+        if(!res.ok) {
+            throw new Error(`Something wrong with API request. \nResponse Status: ${res.status}`)
+        }
+
+    } catch(e) {
+        console.log("Error deleting employee", e.message)
+    }
 }
-
-
 
 
 

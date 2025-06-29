@@ -17,23 +17,6 @@
     "password": "abcxyz"
   },
   {
-    "id": "d5a666f1-63eb-439b-bd18-5d888f3bd328",
-    "salutation": "Ms",
-    "firstName": "Emily",
-    "lastName": "Wilson",
-    "email": "emilywilson@example.com",
-    "phone": "9998765432",
-    "dob": "1992-07-05",
-    "gender": "Female",
-    "qualifications": "Bachelor's Degree",
-    "address": "234 Elm St",
-    "city": "Austin",
-    "state": "TX",
-    "country": "USA",
-    "username": "emilywilson",
-    "password": "qwerty"
-  },
-  {
     "id": "116fa282-8ff4-4044-9a02-6d963c1a16cf",
     "salutation": "Mr",
     "firstName": "David",

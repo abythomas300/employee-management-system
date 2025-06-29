@@ -162,7 +162,7 @@ function validatePasswordLength(pass) { // the parameter 'pass' receives 'employ
 
 // fetch data from API
 async function getEmployeeData() {
-    let response = await fetch("http://localhost:3000/employees")            
+    let response = await fetch("http://localhost:3000/employees/")            
     const dataArray = await response.json()
     renderTable(dataArray)
 }
@@ -195,7 +195,8 @@ function renderTable(data) {                                        // receives 
     let updateButtons = document.querySelectorAll(".updt-button");
     updateButtons.forEach((updateButton)=>{
         updateButton.addEventListener("click", ()=>{
-            // button click logic goes here
+            let clickedUpdateBtnUUID = updateButton.dataset.uuid;
+            console.log("Update Button Click Detected from id: "+clickedUpdateBtnUUID) // for debugging
         })
     }) 
 
@@ -203,7 +204,7 @@ function renderTable(data) {                                        // receives 
     let deleteButtons = document.querySelectorAll(".dlt-button"); 
     deleteButtons.forEach((deleteButton)=>{
         deleteButton.addEventListener("click", ()=>{
-            if(confirm("Are you sure you want to delete")) {  // confirmation box
+            if(confirm("Are you sure you want to delete?")) {  // confirmation box
                 deleteEmployee(deleteButton.dataset.uuid)  // deleteEmployee() method INVOKE
             }
         })
@@ -219,7 +220,7 @@ async function deleteEmployee(id) {  // 'id' receives 'uuid' from renderTable()
     try {
         console.log("DELETE EMPLOYEE METHOD INVOKED!!") // for debugging
         console.log("Button click detected")
-        console.log("Activity found on : ",  id)  // THIS LOGS OUT 'undefined'
+        console.log("Activity found on : ",  id)  
 
         const res = fetch(`http://localhost:3000/employees/${id}`, {
             method: "DELETE"

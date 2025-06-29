@@ -161,10 +161,23 @@ function validatePasswordLength(pass) { // the parameter 'pass' receives 'employ
 // - - - - - READ OPERATION - - - - - 
 
 // fetch data from API
-async function getEmployeeData() {
-    let response = await fetch("http://localhost:3000/employees/")            
-    const dataArray = await response.json()
-    renderTable(dataArray)
+async function getEmployeeData(id) {
+    if(id === undefined) {
+        let response = await fetch("http://localhost:3000/employees/")            
+        const dataArray = await response.json()
+        console.log("Finish fetch operation (id===undefined)")
+        renderTable(dataArray)
+    } else {
+        console.log("Started getting specific employee details")
+        let response = await fetch(`http://localhost:3000/employees/${id}`)
+        console.log("Fetch operation complete - specific employee")
+        const data = await response.json();
+        const specificEmployeeDetails = data;
+        console.log(specificEmployeeDetails);
+        console.log("Data is of the type", typeof specificEmployeeDetails)
+        console.log("Returning data to prefillForm()")
+        prefillForm(specificEmployeeDetails);
+    }
 }
 
 
@@ -197,6 +210,7 @@ function renderTable(data) {                                        // receives 
         updateButton.addEventListener("click", ()=>{
             let clickedUpdateBtnUUID = updateButton.dataset.uuid;
             console.log("Update Button Click Detected from id: "+clickedUpdateBtnUUID) // for debugging
+            getEmployeeData(clickedUpdateBtnUUID);  // sending specific uuid to prefill form with that employee's details
         })
     }) 
 

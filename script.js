@@ -74,7 +74,7 @@ function fetchInputDetails() {
 
     console.log("Date object before format conversion", inputDetails.dob); // for debugging
     console.log("Starting date format conversion . . ."); // for debugging
-    inputDetails.dob = convertDateFormat(inputDetails.dob)  
+    inputDetails.dob = convertDateToDDMMYY(inputDetails.dob)  
     console.log("Date object after format conversion", inputDetails.dob); // for debugging
 
     // for sending above object for client side validation
@@ -83,7 +83,16 @@ function fetchInputDetails() {
 
 
 // helper method to convert date from YYYY-MM-DD to DD-MM-YYYY (this conversion is mandatory to match the validation in the backend)
-function convertDateFormat(normalFormatDate) {
+function convertDateToDDMMYY(normalFormatDate) {
+    const splittedDate = normalFormatDate.split("-");
+    console.log("Splitted Date array:", splittedDate);
+    const formatCorrectedDate = `${splittedDate[2]}-${splittedDate[1]}-${splittedDate[0]}`
+    console.log("Date in correct format", formatCorrectedDate);
+    return formatCorrectedDate;
+}
+
+
+function convertDateToYYYYMMDD(normalFormatDate) {
     const splittedDate = normalFormatDate.split("-");
     console.log("Splitted Date array:", splittedDate);
     const formatCorrectedDate = `${splittedDate[2]}-${splittedDate[1]}-${splittedDate[0]}`
@@ -262,11 +271,10 @@ function prefillForm(specificEmployeeDetails) { // this parameter receives 'spec
     eGender.value = specificEmployeeDetails.gender
     eQualifications.value = specificEmployeeDetails.qualifications
     eCountry.value = specificEmployeeDetails.country
-    eDOB.value = specificEmployeeDetails.dob
+    eDOB.value = convertDateToYYYYMMDD(specificEmployeeDetails.dob) // converts date back to YYYY-MM-DD and assigns
     eAddress.value = specificEmployeeDetails.address
     eCity.value = specificEmployeeDetails.city
     eState.value = specificEmployeeDetails.state
-
 }
 
 

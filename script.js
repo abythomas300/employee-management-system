@@ -184,11 +184,13 @@ function renderTable(data) {                                        // receives 
         <td>${data[i].gender}</td>
         <td>${data[i].dob}</td>
         <td>${data[i].country}</td>
-        <td><button type="button" class="btn btn-sm btn-outline-success">Update</button> <button type="button" class="btn btn-sm btn-outline-danger">Delete</button></td>
+        <td><button type="button" class="btn btn-sm btn-outline-success updt-button" data-uuid="${data[i].id}">Update</button> 
+        <button type="button" class="btn btn-sm btn-outline-danger dlt-button" data-uuid="${data[i].id}">Delete</button></td>
     <tr>
     `
     }
-    tableBody.innerHTML = rows;                                     // assign the 'rows' html code into tableBody
+    tableBody.innerHTML = rows;                                     // assign the 'rows' html code into tableBody 
+    
 }
 
 

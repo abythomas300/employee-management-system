@@ -174,13 +174,18 @@ function validatePasswordLength(pass) { // the parameter 'pass' receives 'employ
 // - - - - - READ OPERATION - - - - - 
 
 // fetch data from API
-async function getEmployeeData(id) {
-    if(id === undefined) {
+async function getEmployeeData(id) {  // This 'id' contains the id of a particular employee who's data is to be updated(sent from updateButtons Event listener)
+    if(id === undefined) {  
         let response = await fetch("http://localhost:3000/employees/")            
         const dataArray = await response.json()
-        console.log("Finish fetch operation (id===undefined)")
+        console.log("Finish fetch operation (id===undefined)");
+
+        dataArray.forEach((employee)=>{     // storing every id to collectionOfID[] for storing it globally
+            collectionOfID.push(employee.id)  
+        });
+
         renderTable(dataArray)
-    } else {
+    } else {    // for fetching data of a particular employee with given id (for UPDATE operation)
         console.log("Started getting specific employee details")
         let response = await fetch(`http://localhost:3000/employees/${id}`)
         console.log("Fetch operation complete - specific employee")  //for debug
@@ -199,13 +204,6 @@ async function getEmployeeData(id) {
 function renderTable(data) {                                        // receives 'dataArray' value
     let tableBody = document.querySelector("#employeeTableBody")
     let rows = "";
-
-    // for storing all id in collectionOfID[] globally
-    for(let j = 0; j < data.length; j++) {
-        console.log("pushing this id to array:", data[j].id)
-        collectionOfID.push(data[j].id)
-    }
-    console.log(collectionOfID);
 
     // for generating table rows dynamically
     for(let i = 0; i < data.length; i++) {

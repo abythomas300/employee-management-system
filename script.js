@@ -23,6 +23,10 @@ const collectionOfID = [];
 
 
 
+// for storing id of employee to be updated
+let idOfEmployeeToBeUpdated = "";
+
+
 // for selecting alert box
 let alertbox = document.querySelector("#alertbox");
 
@@ -257,8 +261,11 @@ function prefillForm(specificEmployeeDetails) { // this parameter receives 'spec
     //making update button visible
     let formUpdateButton = document.querySelector(".form-update-button");
     formUpdateButton.classList.remove("d-none")
+
+    // storing id of the employee to be updated in the global variable 'idOfEmployeeToBeUpdated'
+    idOfEmployeeToBeUpdated = specificEmployeeDetails.id;
+
     //prefilling old data to all respective fields
-    
     const eSalutation = document.querySelector("#salutation")
     const eFirstName = document.querySelector("#firstname")
     const eLastName = document.querySelector("#lastname")

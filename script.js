@@ -255,6 +255,10 @@ function prefillForm(specificEmployeeDetails) { // this parameter receives 'spec
     // making form visible
     console.log("Making form visible")
     formContainer.classList.remove("d-none");
+
+    //making update button visible
+    let formUpdateButton = document.querySelector(".form-update-button");
+    formUpdateButton.classList.remove("d-none")
     //prefilling old data to all respective fields
     
     const eSalutation = document.querySelector("#salutation")

@@ -361,5 +361,41 @@ async function addEmployee(employee) {  // the 'employee' parameter receives 'em
 
 
 
+async function updateEmployee(employeeToBeUpdated) {
+
+    try {
+        // adding respective id to the employeeToBeUpdated object
+    const employeeWithId = {
+        id: idOfEmployeeToBeUpdated,
+        ...employeeToBeUpdated
+    }
+    console.log("Object after adding it's respective ID:");
+    console.log(employeeWithId);
+
+    // PUT logic
+    const res = await fetch(`http://localhost:3000/employees/${employeeWithId.id}`,{
+        method: "PUT",
+        headers: {
+            "Content-Type":"application/JSON"
+        },
+        body: JSON.stringify(employeeWithId)
+    });
+
+    // to check if there is any issue with API request
+    if(!res.ok) {
+        alert("Failed to add employee")
+        throw new Error("Error in API request")
+    }else{
+        getEmployeeData(); // To refresh table in front end
+        alert("Updated employee details successfully")
+    }
+    } catch(e) {
+        console.log("Error found at updateEmployee():", e.message)
+    }
+
+}
+
+
+
 getEmployeeData();  // invoking method to fetch data from API
 

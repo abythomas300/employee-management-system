@@ -18,6 +18,11 @@ function toggleForm(){
 
 
 
+// for storing employees id globally
+const collectionOfID = []; 
+
+
+
 // for selecting alert box
 let alertbox = document.querySelector("#alertbox");
 
@@ -178,12 +183,12 @@ async function getEmployeeData(id) {
     } else {
         console.log("Started getting specific employee details")
         let response = await fetch(`http://localhost:3000/employees/${id}`)
-        console.log("Fetch operation complete - specific employee")
+        console.log("Fetch operation complete - specific employee")  //for debug
         const data = await response.json();
         const specificEmployeeDetails = data;
         console.log(specificEmployeeDetails);
-        console.log("Data is of the type", typeof specificEmployeeDetails)
-        console.log("Returning data to prefillForm()")
+        console.log("Data is of the type", typeof specificEmployeeDetails)  //for debug
+        console.log("Returning data to prefillForm()")  //for debug
         prefillForm(specificEmployeeDetails);
     }
 }
@@ -195,6 +200,14 @@ function renderTable(data) {                                        // receives 
     let tableBody = document.querySelector("#employeeTableBody")
     let rows = "";
 
+    // for storing all id in collectionOfID globally
+    for(let j = 0; j < data.length; j++) {
+        console.log("pushing this id to array:", data[j].id)
+        collectionOfID.push(data[j].id)
+    }
+    console.log(collectionOfID);
+
+    // for generating table rows dynamically
     for(let i = 0; i < data.length; i++) {
         rows = rows + `
     <tr>

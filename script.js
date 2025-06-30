@@ -4,13 +4,13 @@ let formToggleButton = document.querySelector("#formToggleBtn");
 let isFormVisible = false;
 function toggleForm(){
     if(!isFormVisible) {
-        // formContainer.classList.remove("d-none");
-        // formContainer.classList.add("d-block");
+        formContainer.classList.remove("d-none");
+        formContainer.classList.add("d-block");
         formToggleButton.classList.add("custom-btn-border");
         isFormVisible = true;
     } else {
-        // formContainer.classList.add("d-none");
-        // formToggleButton.classList.remove("active");
+        formContainer.classList.add("d-none");
+        formToggleButton.classList.remove("active");
         formToggleButton.classList.remove("custom-btn-border");
         isFormVisible = false;
     }
@@ -200,7 +200,7 @@ function renderTable(data) {                                        // receives 
     let tableBody = document.querySelector("#employeeTableBody")
     let rows = "";
 
-    // for storing all id in collectionOfID globally
+    // for storing all id in collectionOfID[] globally
     for(let j = 0; j < data.length; j++) {
         console.log("pushing this id to array:", data[j].id)
         collectionOfID.push(data[j].id)

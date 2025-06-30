@@ -66,5 +66,39 @@
     "address": "Altamount Road, Cumballa Hill",
     "city": "Mumbai",
     "state": "Maharashtra"
+  },
+  {
+    "id": "27694057-b906-4955-9468-b34240d1a3cf",
+    "salutation": "Mrs",
+    "firstName": "Maria",
+    "lastName": "Garcia",
+    "username": "sweetmariagarcia",
+    "password": "mariapasssword",
+    "email": "mariaofficial@gmail.com",
+    "phone": "7789587417",
+    "gender": "Female",
+    "qualifications": "Master's Degree",
+    "dob": "08-05-2000",
+    "country": "Russia",
+    "address": "Engelsia Building, Apt.47",
+    "city": "Volgograd",
+    "state": "Kazan"
+  },
+  {
+    "id": "70312c61-b196-4147-823d-336bae3bc587",
+    "salutation": "Mr",
+    "firstName": "Mukesh",
+    "lastName": "Ambani",
+    "username": "mukeshreliance",
+    "password": "jioisbetterthanbsnl",
+    "email": "ambani@ril.com",
+    "phone": "6966874985",
+    "gender": "Male",
+    "qualifications": "Master's Degree",
+    "dob": "19-04-1957",
+    "country": "India",
+    "address": "Altamount Road, Cumballa Hill",
+    "city": "Mumbai",
+    "state": "Maharashtra"
   }
 ]

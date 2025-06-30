@@ -142,8 +142,11 @@ function validation(employee) {      // the parameter 'employee' reveived 'input
         })
     } else {
         console.log("Client Side Validation complete ✅ \n No errors found.");
-        console.log("Passing object to fetch() method for POST operation . . .");
-        addEmployee(employee);
+        if(collectionOfID.includes(idOfEmployeeToBeUpdated)) {  // checking if employee already exists
+            updateEmployee(employee);
+        } else {
+            addEmployee(employee) // adding a new employee with the details
+        }
     }
 
 }
